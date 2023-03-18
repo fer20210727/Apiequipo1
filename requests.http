@@ -1,0 +1,89 @@
+###
+POST http://localhost:8000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Gize",
+    "app": "si no queda ",
+    "apm": "te violo.",
+    "telefono": 7712635896,
+    "correo": "pedrovalles213@gmial.com",
+    "contraseña": "pedro4321"
+}
+
+###
+GET http://localhost:8000/api/users HTTP/1.1
+
+###
+GET http://localhost:8000/api/users/64151938c23788daa012df87 HTTP/1.1
+
+###
+PUT  http://localhost:8000/api/users/64151938c23788daa012df87 HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Alvaro",
+    "app": "Hernandez",
+    "apm": "Badillo",
+    "telefono": 7712635896,
+    "correo": "fer@gmail.com",
+    "contraseña": "fer123"
+}
+
+###
+DELETE  http://localhost:8000/api/users/64151938c23788daa012df87 HTTP/1.1
+
+
+
+
+
+
+###
+POST http://localhost:8000/api/products HTTP/1.1
+Content-Type: application/json
+
+{
+    "NombreProducto": "Chocolate",
+    "descripción": "si te queda",
+    "precio": 15,
+    "cantidad": 5,
+    "imagen": "http://chocolateelreal.com/ropa/1.jpg"
+}
+
+
+
+
+
+
+
+###
+POST http://localhost:8000/api/Iot HTTP/1.1
+Content-Type: application/json
+
+{
+    "Tarjeta": "Tarjeta1",
+    "foco1": 0,
+    "foco2": 0,
+    "Temperatura": 12.5,
+    "Humedad": 25,
+    "peso": 15,
+    "motor": 0
+}
+
+###
+GET http://localhost:8000/api/iot HTTP/1.1
+
+
+
+###
+PUT  http://localhost:8000/api/iot/64151ef7d42291a023975a6f HTTP/1.1
+Content-Type: application/json
+
+{
+    "foco1": 1,
+    "foco2": 1,
+    "motor": 1
+}
+
+###
+DELETE http://localhost:8000/api/iot/64151ef7d42291a023975a6f HTTP/1.1
