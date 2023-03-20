@@ -4,10 +4,10 @@ const userSchema = mongoose.Schema({
     Tarjeta: {
         type: String,
     },
-    foco1: {
+    led: {
         type: Number,
     },
-    foco2: {
+    led2: {
         type: Number,
     },
     Temperatura:{
@@ -19,7 +19,7 @@ const userSchema = mongoose.Schema({
     peso:{
         type: Number,
     },
-    motor:{
+    bomba:{
         type: Number,
     }
 });
