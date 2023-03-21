@@ -1,7 +1,7 @@
 {
   "name": "appreal",
   "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js,
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "st": "nodemon src/index.js",
     "start": "expo start",
