@@ -10,10 +10,10 @@ const userSchema = mongoose.Schema({
     led2: {
         type: Number,
     },
-    Temperatura:{
+    temperatura:{
         type: Number,
     },
-    Humedad:{
+    humedad:{
         type: Number,
     },
     peso:{
