@@ -18,11 +18,11 @@ const userSchema =  mongoose.Schema({
   type: Number,
   require: false
   },
-  correo:{
+  email:{
     type: String,
     require: true
   },
-  pass:{
+  password:{
     type: String,
     require: true
   }
