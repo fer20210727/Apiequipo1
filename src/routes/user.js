@@ -51,7 +51,7 @@ router.delete('/users/:id', (req, res) => {
 })
 
 //encontrar el correo especifico
-router.get('/users/email/:correo', (req, res) => {
+router.get('/users/email/:email', (req, res) => {
   userSchema
     .findOne({correo: req.params.correo})
     .then((data) => res.json(data))
