@@ -16,7 +16,7 @@ const userSchema =  mongoose.Schema({
   },
   telefono:{
   type: Number,
-  require: false
+  require: true
   },
   email:{
     type: String,
