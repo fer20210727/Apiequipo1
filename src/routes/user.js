@@ -53,7 +53,7 @@ router.delete('/users/:id', (req, res) => {
 //encontrar el correo especifico
 router.get('/users/email/:email', (req, res) => {
   userSchema
-    .findOne({correo: req.params.correo})
+    .findOne({correo: req.params.email})
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 })
