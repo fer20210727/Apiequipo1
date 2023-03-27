@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 
 const router = express.Router()
 
-function encryptPassword(password){
+function encryptPassword(password) {
   const salt = bcrypt.genSaltSync(10);
   return bcrypt.hashSync(password, salt);
 }
@@ -13,7 +13,7 @@ function encryptPassword(password){
 //Crear usuarios
 
 router.post('/users', async (req, res) => {
-  const {nombre,app,apm,telefono,email,password}= req.body;
+  const { nombre, app, apm, telefono, email, password}= req.body;
   const hashedPassword = encryptPassword(password);
   const user = new userSchema({
     nombre,
@@ -21,7 +21,7 @@ router.post('/users', async (req, res) => {
     apm,
     telefono,
     email,
-    password: hashedPassword
+    password: hashedPassword 
   });
   try{
     await user.save();
