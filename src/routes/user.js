@@ -21,7 +21,7 @@ router.post('/users', async (req, res) => {
     apm,
     telefono,
     email,
-    password: hassedPassword
+    password: hashedPassword
   });
   try{
     await user.save();
