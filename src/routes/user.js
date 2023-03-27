@@ -3,15 +3,30 @@ const userSchema = require('../models/user')
 
 const router = express.Router()
 
+function encryptPassword(password){
+  const salt = bcrypt.genSaltSync(10);
+  return bcrypt.hashSync(password, salt);
+}
+
 //Crear usuarios
 
-router.post('/users', (req, res) => {
-  const user = userSchema(req.body)
-  user
-    .save()
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
-  
+router.post('/users', async (req, res) => {
+  const {nombre,paterno,materno,telefono,correo,password}= req.body;
+  const hashedPassword = encryptPassword(password);
+  const user = new userSchema({
+    nombre,
+    paterno,
+    materno
+    telefono,
+    correo,
+    password: hassedPassword
+  });
+  try{
+    await user.save();
+    res.status(201).json({ message: 'Usuario Creado con Exito'});
+  } catch (err) {
+    res.status(400).json({ message: 'Usuario NO creado'});
+  }
 })
 
 //mostrar todos los datos
