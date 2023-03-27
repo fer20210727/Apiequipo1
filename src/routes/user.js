@@ -11,14 +11,14 @@ function encryptPassword(password){
 //Crear usuarios
 
 router.post('/users', async (req, res) => {
-  const {nombre,paterno,materno,telefono,correo,password}= req.body;
+  const {nombre,app,apm,telefono,email,password}= req.body;
   const hashedPassword = encryptPassword(password);
   const user = new userSchema({
     nombre,
-    paterno,
-    materno
+    app,
+    apm,
     telefono,
-    correo,
+    email,
     password: hassedPassword
   });
   try{
