@@ -30,6 +30,22 @@ router.post('/users', async (req, res) => {
     res.status(400).json({ message: 'Usuario NO creado'});
   }
 })
+//login
+router.post('/users/login', async (req, res) => {
+  // Validacion de existencia
+  const user = await userSchema.findOne({email: req.body.email})
+    if(!user) return res.status(400).json({error: 'Usuario no encontrado'})
+  // Validacion de password en la base de datos
+  const validPassword = await bcrypt.compare(req.body.password, user.password)
+    if(!validPassword) return res.status(400).json({error: 'Constraseña invalida'})
+  
+  // Colocando el token en el header y el cuerpo de la respuesta
+  res.json({
+      error: null,
+      message: 'Hola'
+  })
+})
+
 
 //mostrar todos los datos
 
